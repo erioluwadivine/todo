@@ -28,10 +28,18 @@
         function submitForm(e) {
             e.preventDefault();
             let todo = $('.todo').val()
-            
+
             $('.allTodo').append('<div>' +
-                '<p>' + todo + '</p>' + '</div>'+ '<hr/>'
+                '<p>' + todo + '</p>' + '</div>' + '<hr/>'
             )
+            $.ajax({
+                type: 'post',
+                url: 'localhost:5000/',
+                data: $('form').serialize(),
+                success: function () {
+                    alert('form was submitted');
+                }
+            });
             return false
         }
     </script>
@@ -43,9 +51,9 @@
             columns: 2;
             margin: auto;
         }
-        @media screen  {
-            
-        }
+
+        @media screen {}
+
         .form {
             position: relative;
             z-index: 1;
@@ -99,6 +107,7 @@
         .form button:focus {
             background: #43a047;
         }
+
         body {
             background: #76b852;
             background: -webkit-linear-gradient(right, #76b852, #8dc26f);
