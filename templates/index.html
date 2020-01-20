@@ -30,7 +30,8 @@
             let todo = $('.todo').val()
 
             $('.allTodo').append('<div>' +
-                '<p>' + todo + '</p>' + '</div>' + '<hr/>'
+                '<p>' + todo + '</p>' + '</div>' +
+                '<button class="btn remove btn-danger" onClick="removeTodo()">' + 'remove' + '</button>' + '<hr/>'
             )
             $.ajax({
                 type: 'post',
@@ -41,6 +42,9 @@
                 }
             });
             return false
+        }
+        function removeTodo() {
+            
         }
     </script>
     <style>
@@ -117,6 +121,10 @@
             font-family: "Roboto", sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        .btn-danger {
+            background-color: red;
         }
     </style>
 </body>
