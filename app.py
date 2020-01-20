@@ -10,8 +10,8 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL = 'mysql+pymysql://erioluwa:erioluwa@127.0.0.1/erioluwa'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+# app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL = 'mysql+pymysql://erioluwa:erioluwa@127.0.0.1/erioluwa'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 class tableTodo(db.Model):
