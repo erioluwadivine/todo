@@ -35,6 +35,16 @@ def add():
         "message" : "todo submit successful"
     })
 
+
+@app.route("/delete", methods=["POST"])
+def delete():
+    todoId = request.json.get("todoId")
+    tableTodo.query.filter_by(id=todoId).delete()
+    db.session.commit()
+    return jsonify({
+        "message" : "todo deleted successful"
+    })
+    
     
 if __name__ == "__main__":
     app.run(debug=True)

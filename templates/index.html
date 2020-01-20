@@ -28,13 +28,12 @@
         function submitForm(e) {
             e.preventDefault();
             let todo = $('.todo').val()
-
             $('.allTodo').append('<div>' +
                 '<p>' + todo + '</p>' + '</div>' +
                 '<button class="btn remove btn-danger" onClick="removeTodo()">' + 'remove' + '</button>' + '<hr/>'
             )
             $.ajax({
-                type: 'post',
+                type: 'Post',
                 url: 'localhost:5000/submit',
                 data: $('form').serialize(),
                 success: function () {
@@ -44,7 +43,7 @@
             return false
         }
         function removeTodo() {
-            
+           console.log('hi')
         }
     </script>
     <style>
