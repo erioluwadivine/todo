@@ -12,8 +12,8 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 cors = CORS(app, resources={r"/foo": {"origins": "http://localhost:5000"}})
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-# app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL = 'mysql+pymysql://erioluwa:erioluwa@127.0.0.1/erioluwa'
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL = 'mysql+pymysql://erioluwa:erioluwa@127.0.0.1/erioluwa'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 class tableTodo(db.Model):
