@@ -22,11 +22,11 @@ class tableTodo(db.Model):
 
 db.create_all()
 
-@app.route("/index" , methods= ['GET'])
+@app.route("/" , methods= ['GET'])
 def index():
     return render_template("index.html")
 
-@app.route("/", methods=['POST'])
+@app.route("/submit", methods=['POST'])
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def add():
     todo = request.json.get("todo")

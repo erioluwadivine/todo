@@ -34,7 +34,7 @@
             )
             $.ajax({
                 type: 'post',
-                url: 'localhost:5000/',
+                url: 'localhost:5000/submit',
                 data: $('form').serialize(),
                 success: function () {
                     alert('form was submitted');
