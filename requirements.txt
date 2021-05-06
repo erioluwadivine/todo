@@ -1,5 +1,5 @@
 
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 asn1crypto==0.24.0
 blinker==1.4
 cffi==1.11.5
